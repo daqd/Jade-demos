@@ -1,0 +1,48 @@
+doctype html
+html
+	head
+		title Jade模板引擎基本输出
+		meata(charset="utf-8")
+		link(text="type/css",src="./jade/jade.css")
+	body
+		//输出标签
+		p this is content!
+
+		//遍历输出DOM节点
+		- for(var i=0;i<=3;i++){
+		p.content.content2.content3
+		- }
+
+		//输出变量
+		- var jadeIndex = 9;
+		p #{jadeIndex}
+
+		//输出引用JS
+		- var scriptStr = '<script src="./jade.js"></script>'
+		!{scriptStr}
+		
+		//输出带引用值的标签
+		input(type="text",name="jade",data-jade="自定义属性值")
+
+		//对象数据获取
+		- obj = { foo: 'bar' }
+		- each val, key in obj
+			li #{key}: #{val}
+		//数组的遍历
+		- var demoArr =['mi','meng','yu'];
+		- for(var i in demoArr)
+			p(class="#{demoArr[i]}") #{demoArr[i]}
+		//div标签简写
+		#divID
+		.divClassName
+		.divCLassName1.divCLassName2.divClassName3
+		
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title jade Test
+		include meta
+		include header
+		include common.jade
+	body
+		+ mesItem("外部调用的引擎jade")
+		include footer

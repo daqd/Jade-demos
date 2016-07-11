@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title
+	body
+		//公共调用
+		mixin common1(title)
+			h2  #{title}
+		- var lession = ['node','js','css','h5']
+		mixin mixin1(wrapName,dataArr)
+			+common1('哈哈')
+			#navWrap
+				ul
+					- each value in dataArr
+						li #{value}
+		+ mixin1('计算机',lession)
+		+ mixin1('中学',['数学','英语','语文'])
+
+		//代码块儿
+		

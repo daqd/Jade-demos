@@ -1,0 +1,41 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title mixin
+	body
+	//json取值
+	p #{name}
+
+
+	//循环取值
+	- var mmycode ={"pid":12,"Pname":"XX"}
+	- for (var k in mmycode)
+		p= mmycode[k]
+
+	//循环取出key,value
+	-each value,key in mmycode
+		p #{value} #{key}
+
+	//复杂取值
+	- var data = [{id:1,items:['a','b','c']},{id:2,items:['A','B','C']}];
+	ul
+		- each value in data
+			li
+				ul
+					li= value.id
+					- each item in value.items
+						li= item
+	//条件判断
+	- var isData = true;
+	- var lesson =["jade","node"]
+	if lesson
+		if lesson.length > 1
+			p :more than 2:#{lesson.join(',')}
+		else
+			p :no lession length
+	else
+		p :no lession
+
+
+
